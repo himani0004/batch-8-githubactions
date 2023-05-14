@@ -1,19 +1,34 @@
+
+
 name: second workflow
+
+
 on:
+  
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:  
-jobs:
-  jobname:
-   runs-on: ubuntu-latest
-   steps:
-     -uses: actions/checkout@v3
-     -name: Run a one-line script
-      run: echo hello,himani batch8
+  
 
-     -name: run a multi-line script
-      run: |
-        echo hi,
-        echo you.   
+  
+  workflow_dispatch:
+
+jobs:
+  
+  build:
+    
+    runs-on: ubuntu-latest
+
+    
+    steps:
+      
+      - uses: actions/checkout@v3
+
+      
+      - name: Run a one-line script
+        run: echo Hello!
+
+      
+      - name: Run a multi-line script
+        run: |
+          echo hello there,
+          echo multiline code in vs code.
